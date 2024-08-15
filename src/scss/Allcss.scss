@@ -1,0 +1,41 @@
+@import './reset';
+@import './font';
+@import './header';
+@import './footer';
+@import './mixin';
+@import './content';
+@import './register';
+@import './button';
+
+body {
+    padding-top: 180px;
+    background: #000 linear-gradient(360deg, rgba(0,0,0,1) 26%, rgba(255,0,184,0.2) 66%, rgba(4,29,253,0.2) 100%);
+
+    @include tablet {
+        & {
+            padding-top: 12.5000vw;
+        }
+    }
+
+    @include mobile {
+        & {
+            padding-top: 26.0417vw;
+        }
+    }
+}
+
+.wrap {
+    @include wrapPadding;
+}
+
+.visible_mobile {
+    @include visible_mobile;
+}
+
+.visible_desktop {
+    @include visible_desktop;
+}
+
+input, textarea {
+    background: none;
+}

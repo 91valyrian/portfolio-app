@@ -1,0 +1,111 @@
+@import './mixin';
+
+#go_tabs{
+    position: absolute;
+    height:0;
+    z-index: 100;
+    background: #fff;
+
+    a{
+        display: block;
+        position:absolute;
+        left: -9000px;
+        text-align:center;
+        width:400px;
+    }
+}
+
+.header{
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    z-index:99;
+    
+
+    @include tablet{
+        &{ height: 5.4688vw; }
+        .logo img{ width: 7.8125vw }
+    }
+
+    @include mobile{
+        &{ height: 13.0208vw }
+        .logo img{ width: 16.6667vw }
+    }
+    
+    
+
+    &.scrolled{ backdrop-filter: blur(10px);}
+
+    .wrap{ @include flex_SpaceBet_Center; height:100%; }
+
+    .navBar{
+        .menuBtn{
+            display:none;
+            
+            button{ background: none; border: 0; }
+
+            @include mobile{
+                &{display: block; }
+                img { width: 5.2083vw }
+            }
+        }
+        nav{
+            @include mobile{
+                display: none;
+                &.menu-open{
+                    width: 100%;
+                    height: 100vh;
+                    display: block;
+                    position: fixed;
+                    top:0;
+                    left: 0;
+                    background: #000;
+
+                    .close{display:block;}
+
+                    ul{
+                        height:100%;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        a{ @include DefaultText_Single_600 }
+                    }
+                }
+            }
+
+            ul{
+                display: flex;
+                gap: 50px;
+                @include tablet{
+                    &{gap:2.3438vw;}
+                }
+                @include mobile{
+                    &{gap:7.8125vw;}
+                    .logo img{ width: 16.6667vw }
+                }
+    
+                a{ @include DefaultText_Single_300 }
+            }
+
+            .close{
+                display:none;
+                background: none;
+                width:5.2083vw;
+                height: 5.2083vw;
+                text-indent:-1301.9531vw;
+                border: 0;
+                position:fixed;
+                top:7.8125vw;
+                right:5.8594vw;
+                color:#fff;
+                background: url(/img/closeMenu.png) no-repeat;
+                background-size:5.2083vw;
+                
+            }
+        }
+    }
+}
+
+

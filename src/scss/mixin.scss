@@ -1,0 +1,98 @@
+$breakpoint-mobile: 1px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+@mixin mobile{
+    @media (min-width : #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet}){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width : #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop}){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width : #{$breakpoint-desktop}){
+        @content;
+    }
+}
+
+@mixin flex{
+    display:flex;
+}
+
+@mixin flex_inline__Center{
+    display:inline-flex;
+    align-items: center; 
+}
+
+@mixin flex_Center_Center{
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+}
+@mixin flex_No_Center{
+    display:flex;
+    align-items: center; 
+}
+
+@mixin flex_SpaceBet{
+    display:flex;
+    justify-content: space-between;
+}
+
+@mixin flex_SpaceBet_Center{
+    display:flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+@mixin flex_element_center{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex_column_center{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@mixin wrapPadding{
+    padding: 0 40px;
+
+    @include tablet{
+        &{ padding: 0 2.1094vw;}
+    }
+    
+    @include mobile{
+        &{ padding: 0 3.1250vw; }
+    }
+}
+
+@mixin visible_mobile{
+    display: none;
+
+    @include mobile{
+        &{ display: block; }
+    }
+}
+
+@mixin visible_desktop{
+    display: block;
+
+    @include mobile{
+        &{ display: none; }
+    }
+}
+
+
+@mixin virtual_element_block{
+    content: '';
+    display: block;
+}

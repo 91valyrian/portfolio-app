@@ -1,0 +1,173 @@
+@include keyframes(rotate){
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.introSection{
+    position:relative;
+    overflow: hidden;
+
+    .imgBox{
+        &.ring{
+            position:absolute;
+            top: calc(-33.33335vw / 1.3);
+            right: calc(-33.33335vw / 1.3);
+            width: 66.6667vw;
+            height: 66.6667vw;
+            z-index: -1;
+            @include animation('rotate 60s linear infinite');
+
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+
+    .introContainer{
+        height: 52.6875vw;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .vi-text{
+        .txt-line{
+            display:flex;
+            align-items: center;
+            gap: 45px;
+            
+            .tit{
+                position: relative;
+                font-size: 7.2917vw;
+                font-weight: 800;
+                @include engFont;
+
+                &.startOn{
+                    span{
+                        &.float-1{
+                            height:100%;
+                            transition: height .3s ;
+                        }
+                        &.float-2{
+                            height:100%;
+                            transition: height .3s .2s;
+                        }
+                        &.float-3{
+                            height:100%;
+                            transition: height .3s .4s;
+                        }
+                        &.float-4{
+                            height:100%;
+                            transition: height .5s .6s;
+                        }
+                    }
+                }
+
+                span{
+                    height:0;
+                    overflow:hidden;
+                    display:inline-block;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    @include engFont;
+
+                    &.float-1{
+                        color: #E56E2B;
+                        z-index: 2;
+                        transition: .5s .6s;
+                    }
+                    &.float-2{
+                        color: #2B3DE5;
+                        z-index: 3;
+                        transition: .3s .4s;
+                    }
+                    &.float-3{
+                        color: #2EE52B;
+                        z-index: 3;
+                        transition: .3s .2s;
+                    }
+                    &.float-4{
+                        color: #fff;
+                        z-index: 3;
+                        transition: .3s;
+                    }
+                }
+            }
+            .desc{
+                font-size: 1.3021vw;
+                line-height: 1.8229vw;
+            }
+        }
+    }
+}
+
+
+@include tablet{
+    .introSection{
+
+        .introContainer{
+            height: 70.3125vw;
+        }
+
+        .imgBox{
+            &.ring{
+                top: calc(-46.8750vw / 1.2);
+                right: calc(-46.8750vw / 1.2);
+                width: 93.7500vw;
+                height: 93.7500vw;
+            }
+        }
+    
+        .vi-text{
+            .txt-line{
+                gap: 3.5156vw;
+                
+                .tit{
+                    font-size: 10.1563vw;
+                }
+                .desc{
+                    font-size: 1.5625vw;
+                    line-height: 2.3438vw;
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .introSection{
+        .introContainer{
+            height:156.2500vw;
+        }
+        .imgBox{
+            &.ring{
+                top: calc(-166.6667vw / 5);
+                right: calc(-166.6667vw / 2);
+                width: 166.6667vw;
+                height: 166.6667vw;
+            }
+        }
+    
+        .vi-text{
+            .txt-line{
+                gap: 5.8594vw;
+                flex-direction: column;
+                align-items: start;
+                
+                .tit{
+                    font-size: 12.0208vw;
+                }
+                .desc{
+                    font-size: 3.1667vw;
+                    line-height: 4.4688vw;
+                    padding-left: 20vw;
+                }
+            }
+        }
+    }
+}

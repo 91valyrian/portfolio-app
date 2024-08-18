@@ -10,3 +10,4 @@
 - react-router-dom을 설치합니다. `npm install react-router-dom`
 - sass를 설치합니다. `npm install sass`
 - marquee를 설치팝니다. `npm install react-fast-marquee --save`
+- gsap를 설치합니다. `npm install gsap`

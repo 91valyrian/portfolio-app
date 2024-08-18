@@ -3,25 +3,11 @@
 @import './header';
 @import './footer';
 @import './mixin';
-@import './content';
-@import './register';
-@import './button';
+@import './intro';
+@import './about';
 
 body {
-    padding-top: 180px;
     background: #000 linear-gradient(360deg, rgba(0,0,0,1) 26%, rgba(255,0,184,0.2) 66%, rgba(4,29,253,0.2) 100%);
-
-    @include tablet {
-        & {
-            padding-top: 12.5000vw;
-        }
-    }
-
-    @include mobile {
-        & {
-            padding-top: 26.0417vw;
-        }
-    }
 }
 
 .wrap {
@@ -46,4 +32,33 @@ input, textarea {
     height: 1px;
     clip: rect(0,0,0,0);
     overflow: hidden;
+}
+
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    pointer-events: none;
+    transition: transform 0.2s ease-out; /* 스무스한 위치 이동을 위한 transition */
+    transform: translate(-50%, -50%); /* 커서의 중심을 기준으로 맞춤 */
+    
+    &.clicked::before {
+        width: 15px;
+        height: 15px;
+        background-color: #2EE52B;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        backdrop-filter: invert(80%);
+        opacity: 0.7;
+        transition: background-color 0.2s, width .2s, height .2s ; /* 클릭 시 배경색 변화 */
+    }
 }

@@ -96,3 +96,23 @@ $breakpoint-desktop: 1280px;
     content: '';
     display: block;
 }
+
+
+// @keyframes을 생성시키는 mixin 설정
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+// @keyframes을 사용하는 mixin 설정
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    animation: #{$str};
+}

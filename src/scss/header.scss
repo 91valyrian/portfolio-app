@@ -189,7 +189,7 @@
                     top:0;
                     left:0;
                     background: rgba(0,0,0,.3);
-                    backdrop-filter: blur(0.2604vw);
+                    backdrop-filter: blur(12px);
                     z-index:-1;
                     border-left:0.0521vw solid rgba(255,255,255,0.2);
                     @include virtual_element_block;
@@ -289,7 +289,7 @@
                     }
 
                     &::before{
-                        backdrop-filter: blur(0.3906vw);
+                        backdrop-filter: blur(12px);
                     }
                     
                     ul{
@@ -334,7 +334,7 @@
                     }
 
                     &::before{
-                        backdrop-filter: blur(0.6510vw);
+                        backdrop-filter: blur(12px);
                     }
                     
                     ul{

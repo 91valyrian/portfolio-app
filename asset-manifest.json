@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio-app/static/css/main.77e2e6c2.css",
-    "main.js": "/portfolio-app/static/js/main.8d46a49e.js",
+    "main.css": "/portfolio-app/static/css/main.6ba09b6c.css",
+    "main.js": "/portfolio-app/static/js/main.a5faaa07.js",
     "static/js/453.ed3810f9.chunk.js": "/portfolio-app/static/js/453.ed3810f9.chunk.js",
     "static/media/vi-ring.png": "/portfolio-app/static/media/vi-ring.d3d68695c9fbcc544586.png",
+    "static/media/projectImg-02.png": "/portfolio-app/static/media/projectImg-02.ec86b993e322cccebb9f.png",
+    "static/media/projectImg-01.png": "/portfolio-app/static/media/projectImg-01.245ecb22b3c4478cdbd2.png",
+    "static/media/projectImg-03.png": "/portfolio-app/static/media/projectImg-03.1736c205b61b0332f309.png",
     "static/media/about-star.png": "/portfolio-app/static/media/about-star.9e684dad52e272f20df3.png",
     "index.html": "/portfolio-app/index.html",
-    "main.77e2e6c2.css.map": "/portfolio-app/static/css/main.77e2e6c2.css.map",
-    "main.8d46a49e.js.map": "/portfolio-app/static/js/main.8d46a49e.js.map",
+    "main.6ba09b6c.css.map": "/portfolio-app/static/css/main.6ba09b6c.css.map",
+    "main.a5faaa07.js.map": "/portfolio-app/static/js/main.a5faaa07.js.map",
     "453.ed3810f9.chunk.js.map": "/portfolio-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77e2e6c2.css",
-    "static/js/main.8d46a49e.js"
+    "static/css/main.6ba09b6c.css",
+    "static/js/main.a5faaa07.js"
   ]
 }

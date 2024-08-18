@@ -34,8 +34,8 @@ class Intro extends Component{
             scrollTrigger: {
                 trigger: this.sectionRef.current,
                 start: '0%', // 스크롤이 top center에 도달할 때
-                end: 'bottom 50%', // 스크롤이 bottom top에 도달할 때
-                markers: true, // 트리거 포인트를 시각적으로 표시
+                end: 'bottom 0%', // 스크롤이 bottom top에 도달할 때
+                // markers: true,
                 scrub: true, // 스크롤에 따라 애니메이션 동기화
                 onEnter: () => {
                     this.elements.forEach((el, index) => {

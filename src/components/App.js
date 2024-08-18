@@ -3,6 +3,7 @@ import '../scss/Allcss.scss';
 import HeaderAdmin from './Header/Header_admin';
 import Intro from './Content/Intro';
 import About from './Content/About';
+import Project from './Content/Project';
 import Loading from './Loading';
 
 class App extends Component {
@@ -66,6 +67,7 @@ class App extends Component {
                 <main>
                     <Intro isLoaded={isLoaded} />
                     <About />
+                    <Project />
                 </main>
             </div>
         );

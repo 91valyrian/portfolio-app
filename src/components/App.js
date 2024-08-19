@@ -4,6 +4,7 @@ import HeaderAdmin from './Header/Header_admin';
 import Intro from './Content/Intro';
 import About from './Content/About';
 import Project from './Content/Project';
+import Highlight from './Content/Highlight';
 import Loading from './Loading';
 
 class App extends Component {
@@ -68,6 +69,7 @@ class App extends Component {
                     <Intro isLoaded={isLoaded} />
                     <About />
                     <Project />
+                    <Highlight />
                 </main>
             </div>
         );

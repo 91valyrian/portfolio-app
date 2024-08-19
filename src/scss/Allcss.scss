@@ -6,9 +6,11 @@
 @import './intro';
 @import './about';
 @import './project';
+@import './highlight';
 
 body {
     background: #000 linear-gradient(360deg, rgba(0,0,0,1) 26%, rgba(255,0,184,0.2) 66%, rgba(4,29,253,0.2) 100%);
+    overflow-x: hidden;
 }
 
 .wrap {
@@ -21,6 +23,14 @@ body {
 
 .visible_desktop {
     @include visible_desktop;
+}
+
+.visible_mobile_tablet{
+    @include visible_mobile_tablet;
+}
+
+.visible_desktop_only{
+    @include visible_desktop_only;
 }
 
 input, textarea {

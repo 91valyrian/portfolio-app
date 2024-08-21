@@ -21,9 +21,9 @@ class App extends Component {
 
     componentDidMount() {
         // 5초 후 로딩 종료
-        this.timer = setTimeout(() => {
-            this.setState({ isLoaded: true });
-        }, 1);
+        // this.timer = setTimeout(() => {
+        //     this.setState({ isLoaded: true });
+        // }, 1);
 
         // 이벤트 리스너 추가
         document.addEventListener('mousedown', this.handleMouseDown);

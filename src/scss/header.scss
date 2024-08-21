@@ -213,6 +213,7 @@
                         font-weight: bold;
                         position: relative;
                         color: rgba(255,255,255,.7);
+                        cursor: pointer;
                         @include engFont;
 
                         &:hover{

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Element } from 'react-scroll';
 import { gsap } from 'gsap';
 
 class Footer extends Component {
@@ -14,7 +15,7 @@ class Footer extends Component {
         // Intersection Observer 설정
         const observerOptions = {
             root: null, // 뷰포트를 기준으로 관찰
-            threshold: 0.6, // 요소가 10% 이상 보이면 트리거
+            threshold: 0.4, // 요소가 10% 이상 보이면 트리거
         };
 
         // Contact List 애니메이션
@@ -48,25 +49,27 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className='footerSection' ref={this.sectionRef}>
-                <div className="wrap">
-                    <div className="contact-list" ref={this.contactListRef}>
-                        <Link to={'tel:010-9928-6110'}>PHONE</Link>
-                        <Link to={'mailto:91.valyrian@gmail.com'}>EMAIL</Link>
-                        <Link to={'https://www.instagram.com/u.say.cheeze/'} target='_blank'>INSTAGRAM</Link>
-                    </div>
+            <Element name="contact">
+                <footer className='footerSection' ref={this.sectionRef}>
+                    <div className="wrap">
+                        <div className="contact-list" ref={this.contactListRef}>
+                            <Link to={'tel:010-9928-6110'}>PHONE</Link>
+                            <Link to={'mailto:91.valyrian@gmail.com'}>EMAIL</Link>
+                            <Link to={'https://www.instagram.com/u.say.cheeze/'} target='_blank'>INSTAGRAM</Link>
+                        </div>
 
-                    <div className="typoGraphy">
-                        <div className="typeBox" ref={(el) => (this.textBoxRefs[0] = el)}>
-                            <p>LEE HYEONG</p>
-                        </div>
-                        <div className="typeBox" ref={(el) => (this.textBoxRefs[1] = el)}>
-                            <Link to={'sms:01099286110?body=문의하실 내용을 작성해 주세요.'} className="message">message</Link>
-                            <p>SEOK</p>
+                        <div className="typoGraphy">
+                            <div className="typeBox" ref={(el) => (this.textBoxRefs[0] = el)}>
+                                <p>LEE HYEONG</p>
+                            </div>
+                            <div className="typeBox" ref={(el) => (this.textBoxRefs[1] = el)}>
+                                <Link to={'sms:01099286110?body=문의하실 내용을 작성해 주세요.'} className="message">message</Link>
+                                <p>SEOK</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </Element>
         );
     }
 }

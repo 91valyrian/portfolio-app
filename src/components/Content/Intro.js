@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Loading from '../Loading';
+import { Element } from 'react-scroll';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -36,9 +37,10 @@ class Intro extends Component {
                 entries.forEach(entry => {
                     if (entry.intersectionRatio > 0.6) {
                         gsap.to(entry.target, { opacity: 1, y: 0, duration: 0.6, delay: index * 0.2, ease: 'power2.out' });
-                    } else {
-                        gsap.to(entry.target, { opacity: 0, y: '100%', duration: 0.6, delay: index * 0.2, ease: 'power2.out' });
                     }
+                    // else {
+                    //     gsap.to(entry.target, { opacity: 0, y: '100%', duration: 0.6, delay: index * 0.2, ease: 'power2.out' });
+                    // }
                 });
             }, observerOptions);
 
@@ -56,42 +58,44 @@ class Intro extends Component {
         }
 
         return (
-            <section className="introSection" ref={this.sectionRef}>
-                <div className="imgBox ring"><img src={VisualImg} alt="비주얼 포인트 이미지" /></div>
+            <Element name='home'>
+                <section className="introSection" ref={this.sectionRef} name='home'>
+                    <div className="imgBox ring"><img src={VisualImg} alt="비주얼 포인트 이미지" /></div>
 
-                <div className="wrap">
-                    <div className="introContainer">
-                        {/* 텍스트 박스 */}
-                        <div className="vi-text">
-                            <div className="txt-line">
-                                <p className="tit" ref={(el) => (this.textBoxRefs[0] = el)}>
-                                    CRAFTING
-                                </p>
-                            </div>
-                            <div className="txt-line">
-                                <p className="tit" ref={(el) => (this.textBoxRefs[1] = el)}>
-                                    MY
-                                </p>
-                                <p className="desc visible_desktop" ref={(el) => (this.textBoxRefs[2] = el)}>
-                                    저는 다양한 웹 서비스의 개발하고 운영해온 경험이 있습니다.<br />
-                                    다수의 UI 구현을 통해 사용자 인터랙션에 대한 이해도를 갖추고 있으며 업무 효율 향상에 많은 관심을 가지고 있습니다.
-                                </p>
-                            </div>
-                            <div className="txt-line">
-                                <p className="tit" ref={(el) => (this.textBoxRefs[3] = el)}>
-                                    UNIQUE<br className="visible_mobile"/> WEB
-                                </p>
-                                <p className="desc visible_mobile" ref={(el) => (this.textBoxRefs[4] = el)}>
-                                    저는 다양한 웹 서비스의 개발하고 운영해온<br />
-                                    경험이 있으며 다수의 UI 구현을 통해 사용자 인터랙션에<br />
-                                    대한 이해도를 갖추고 있고 업무 효율 향상에<br />
-                                    많은 관심을 가지고 있습니다.
-                                </p>
+                    <div className="wrap">
+                        <div className="introContainer">
+                            {/* 텍스트 박스 */}
+                            <div className="vi-text">
+                                <div className="txt-line">
+                                    <p className="tit" ref={(el) => (this.textBoxRefs[0] = el)}>
+                                        CRAFTING
+                                    </p>
+                                </div>
+                                <div className="txt-line">
+                                    <p className="tit" ref={(el) => (this.textBoxRefs[1] = el)}>
+                                        MY
+                                    </p>
+                                    <p className="desc visible_desktop" ref={(el) => (this.textBoxRefs[2] = el)}>
+                                        저는 다양한 웹 서비스의 개발하고 운영해온 경험이 있습니다.<br />
+                                        다수의 UI 구현을 통해 사용자 인터랙션에 대한 이해도를 갖추고 있으며 업무 효율 향상에 많은 관심을 가지고 있습니다.
+                                    </p>
+                                </div>
+                                <div className="txt-line">
+                                    <p className="tit" ref={(el) => (this.textBoxRefs[3] = el)}>
+                                        UNIQUE<br className="visible_mobile"/> WEB
+                                    </p>
+                                    <p className="desc visible_mobile" ref={(el) => (this.textBoxRefs[4] = el)}>
+                                        저는 다양한 웹 서비스의 개발하고 운영해온<br />
+                                        경험이 있으며 다수의 UI 구현을 통해 사용자 인터랙션에<br />
+                                        대한 이해도를 갖추고 있고 업무 효율 향상에<br />
+                                        많은 관심을 가지고 있습니다.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </Element>
         )
     }
 }

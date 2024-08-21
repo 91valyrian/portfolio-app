@@ -6,7 +6,7 @@ class Project extends Component{
     render(){
 
         return(
-            <section className="projectSection">
+            <section className="projectSection" name='project'>
                 <p className="project-tit">
                     Projects Recently <br />Worked On
                 </p>

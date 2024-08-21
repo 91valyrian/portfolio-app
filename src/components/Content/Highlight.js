@@ -34,7 +34,7 @@ class Highlight extends Component{
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: this.sectionRef.current,
-                    start: 'top top',
+                    start: 'top 40%',
                     end: 'bottom top',
                     scrub: true,
                 },

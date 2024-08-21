@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import Marquee from 'react-fast-marquee';
 
 //IMG
@@ -51,26 +51,26 @@ class Header_admin extends Component{
                             </div>
                             <div className="area area-2">
                                 <ul>
-                                    <li onClick={this.menuToggle}>
-                                        <Link to={'/'}>
+                                    <li >
+                                        <Link to='home' smooth={true} duration={500} onClick={this.menuToggle}>
                                             HOME
                                             <span>HOME</span>
                                         </Link>
                                     </li>
-                                    <li onClick={this.menuToggle}>
-                                        <Link to={'/'}>
+                                    <li >
+                                        <Link to='about' smooth={true} duration={500} onClick={this.menuToggle}>
                                             ABOUT
                                             <span>ABOUT</span>
                                         </Link>
                                     </li>
-                                    <li onClick={this.menuToggle}>
-                                        <Link to={'/'}>
+                                    <li >
+                                        <Link to='project' smooth={true} duration={500} onClick={this.menuToggle}>
                                             PROJECT
                                             <span>PROJECT</span>
                                         </Link>
                                     </li>
-                                    <li onClick={this.menuToggle}>
-                                        <Link to={'/'}>
+                                    <li >
+                                        <Link to='contact' smooth={true} duration={500} onClick={this.menuToggle}>
                                             CONTACT
                                             <span>CONTACT</span>
                                         </Link>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Element } from 'react-scroll';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Marquee from "react-fast-marquee";
@@ -46,86 +47,88 @@ class About extends Component{
 
     render(){
         return(
-            <section className="aboutSection" ref={this.sectionRef}>
-                <div className="imgBox about"><img src={AboutPoint} alt="About 포인트 이미지" /></div>
+            <Element name='about'>
+                <section className="aboutSection" ref={this.sectionRef}>
+                    <div className="imgBox about"><img src={AboutPoint} alt="About 포인트 이미지" /></div>
 
-                <div className="marqueeSet">
-                    <div className="marquee about">
-                        <Marquee speed={100}>
-                            <span>MEET THE VISIONARY BEHIND THE CODE</span>
-                        </Marquee>
-                    </div>
+                    <div className="marqueeSet">
+                        <div className="marquee about">
+                            <Marquee speed={100}>
+                                <span>MEET THE VISIONARY BEHIND THE CODE</span>
+                            </Marquee>
+                        </div>
 
-                    <div className="marqueeAbout">
-                        <div className="triggerBox name">
-                            <div className="boxWrap">
-                                <span className="point">李亨錫</span>
-                                <span>ฮยอนซอก ล</span>
-                                <span>이형석</span>
-                                <span className="point">イ・ヒョンソク</span>
-                                <span>HyeongSeok Lee</span>
-                                <span>Χιουνγκσέοκ Λι</span>
-                                <span className="point">李亨錫</span>
-                                <span>ฮยอนซอก ล</span>
-                                <span>이형석</span>
-                                <span className="point">イ・ヒョンソク</span>
-                                <span>HyeongSeok Lee</span>
-                                <span>Χιουνγκσέοκ Λι</span>
+                        <div className="marqueeAbout">
+                            <div className="triggerBox name">
+                                <div className="boxWrap">
+                                    <span className="point">李亨錫</span>
+                                    <span>ฮยอนซอก ล</span>
+                                    <span>이형석</span>
+                                    <span className="point">イ・ヒョンソク</span>
+                                    <span>HyeongSeok Lee</span>
+                                    <span>Χιουνγκσέοκ Λι</span>
+                                    <span className="point">李亨錫</span>
+                                    <span>ฮยอนซอก ล</span>
+                                    <span>이형석</span>
+                                    <span className="point">イ・ヒョンソク</span>
+                                    <span>HyeongSeok Lee</span>
+                                    <span>Χιουνγκσέοκ Λι</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="marqueeAbout">
+                            <div className="triggerBox about">
+                                <div className="boxWrap">
+                                    <span>적극적</span>
+                                    <span>융통성 있는</span>
+                                    <span className="point">열정가</span>
+                                    <span>변화에 빠르게</span>
+                                    <span >적응</span>
+                                    <span>원할한 협력</span>
+                                    <span>적극적</span>
+                                    <span>융통성 있는</span>
+                                    <span className="point">열정가</span>
+                                    <span>변화에 빠르게</span>
+                                    <span >적응</span>
+                                    <span>원할한 협력</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="marqueeAbout">
+                            <div className="triggerBox skill">
+                                <div className="boxWrap">
+                                    <span>그누보드</span>
+                                    <span className="point">영카트</span>
+                                    <span>REACT</span>
+                                    <span className="point">HTML</span>
+                                    <span>JSP</span>
+                                    <span className="point">JAVASCRIPT</span>
+                                    <span>CSS</span>
+                                    <span>PHP</span>
+                                    <span className="point">SCSS</span>
+                                    <span>JQUERY</span>
+                                    <span>그누보드</span>
+                                    <span className="point">영카트</span>
+                                    <span>REACT</span>
+                                    <span className="point">HTML</span>
+                                    <span>JSP</span>
+                                    <span className="point">JAVASCRIPT</span>
+                                    <span>CSS</span>
+                                    <span>PHP</span>
+                                    <span className="point">SCSS</span>
+                                    <span>JQUERY</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="marqueeAbout">
-                        <div className="triggerBox about">
-                            <div className="boxWrap">
-                                <span>적극적</span>
-                                <span>융통성 있는</span>
-                                <span className="point">열정가</span>
-                                <span>변화에 빠르게</span>
-                                <span >적응</span>
-                                <span>원할한 협력</span>
-                                <span>적극적</span>
-                                <span>융통성 있는</span>
-                                <span className="point">열정가</span>
-                                <span>변화에 빠르게</span>
-                                <span >적응</span>
-                                <span>원할한 협력</span>
-                            </div>
-                        </div>
+                    <div className="scrollBox">
+                        <div className="circle"></div>
                     </div>
-
-                    <div className="marqueeAbout">
-                        <div className="triggerBox skill">
-                            <div className="boxWrap">
-                                <span>그누보드</span>
-                                <span className="point">영카트</span>
-                                <span>REACT</span>
-                                <span className="point">HTML</span>
-                                <span>JSP</span>
-                                <span className="point">JAVASCRIPT</span>
-                                <span>CSS</span>
-                                <span>PHP</span>
-                                <span className="point">SCSS</span>
-                                <span>JQUERY</span>
-                                <span>그누보드</span>
-                                <span className="point">영카트</span>
-                                <span>REACT</span>
-                                <span className="point">HTML</span>
-                                <span>JSP</span>
-                                <span className="point">JAVASCRIPT</span>
-                                <span>CSS</span>
-                                <span>PHP</span>
-                                <span className="point">SCSS</span>
-                                <span>JQUERY</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="scrollBox">
-                    <div className="circle"></div>
-                </div>
-            </section>
+                </section>
+            </Element>
         )
     }
 }

@@ -8,81 +8,54 @@ import VisualImg from '../../img/intro/vi-ring.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-class Intro extends Component{
+class Intro extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.elements = [];
-        this.sectionRef = React.createRef(); // 새로운 ref 추가
+        this.sectionRef = React.createRef();
+        this.textBoxRefs = []; // Multiple refs for text boxes
     }
 
     componentDidMount() {
-        this.elements.forEach((el, index) => {
-            if (el) {
-                gsap.to(el, {
-                    duration: 1,
-                    delay: index * 0.2,
-                    onStart: () => {
-                        el.classList.add('startOn');
-                    }
-                });
+        // 초기 상태 설정: 애니메이션이 적용되기 전에 텍스트 박스가 보이지 않도록 설정
+        this.textBoxRefs.forEach((textBoxRef) => {
+            if (textBoxRef) {
+                gsap.set(textBoxRef, { opacity: 0, y: '100%' });
             }
         });
 
-        // ScrollTrigger를 introSection에 적용
-        gsap.to(this.sectionRef.current, {
-            scrollTrigger: {
-                trigger: this.sectionRef.current,
-                start: '0%', // 스크롤이 top center에 도달할 때
-                end: 'bottom 0%', // 스크롤이 bottom top에 도달할 때
-                // markers: true,
-                scrub: true, // 스크롤에 따라 애니메이션 동기화
-                onEnter: () => {
-                    this.elements.forEach((el, index) => {
-                        if (el) {
-                            gsap.to(el, {
-                                duration: 1,
-                                delay: index * 0.2,
-                                onStart: () => {
-                                    el.classList.add('startOn');
-                                }
-                            });
-                        }
-                    });
-                },
-                onLeave: () => { // end 지점을 지나면 startOn 클래스 제거
-                    this.elements.forEach(el => {
-                        if (el) {
-                            el.classList.remove('startOn');
-                        }
-                    });
-                },
-                onLeaveBack: () => { // 다시 돌아오면 startOn 클래스 추가
-                    this.elements.forEach((el, index) => {
-                        if (el) {
-                            gsap.to(el, {
-                                duration: 1,
-                                delay: index * 0.2,
-                                onStart: () => {
-                                    el.classList.add('startOn');
-                                }
-                            });
-                        }
-                    });
-                }
+        // Intersection Observer 설정
+        const observerOptions = {
+            root: null, // 뷰포트를 기준으로 관찰
+            threshold: 0.6, // 요소가 60% 이상 보이면 트리거
+        };
 
-            },
+        // Text Boxes 애니메이션
+        this.textBoxRefs.forEach((textBoxRef, index) => {
+            const textBoxObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0.6) {
+                        gsap.to(entry.target, { opacity: 1, y: 0, duration: 0.6, delay: index * 0.2, ease: 'power2.out' });
+                    } else {
+                        gsap.to(entry.target, { opacity: 0, y: '100%', duration: 0.6, delay: index * 0.2, ease: 'power2.out' });
+                    }
+                });
+            }, observerOptions);
+
+            if (textBoxRef) {
+                textBoxObserver.observe(textBoxRef); // DOM 요소를 전달
+            }
         });
     }
 
-    render(){
+    render() {
         const { isLoaded } = this.props;
 
-        if(!isLoaded){
+        if (!isLoaded) {
             return <Loading />
         }
-    
-        return(
+
+        return (
             <section className="introSection" ref={this.sectionRef}>
                 <div className="imgBox ring"><img src={VisualImg} alt="비주얼 포인트 이미지" /></div>
 
@@ -91,35 +64,24 @@ class Intro extends Component{
                         {/* 텍스트 박스 */}
                         <div className="vi-text">
                             <div className="txt-line">
-                                <p className="tit" ref={el => this.elements[0] = el}>
+                                <p className="tit" ref={(el) => (this.textBoxRefs[0] = el)}>
                                     CRAFTING
-                                    <span className="float-1">CRAFTING</span>
-                                    <span className="float-2">CRAFTING</span>
-                                    <span className="float-3">CRAFTING</span>
-                                    <span className="float-4">CRAFTING</span>
                                 </p>
                             </div>
                             <div className="txt-line">
-                                <p className="tit" ref={el => this.elements[1] = el}>
+                                <p className="tit" ref={(el) => (this.textBoxRefs[1] = el)}>
                                     MY
-                                    <span className="float-1">MY</span>
-                                    <span className="float-2">MY</span>
-                                    <span className="float-3">MY</span>
-                                    <span className="float-4">MY</span>
                                 </p>
-                                <p className="desc visible_desktop">
+                                <p className="desc visible_desktop" ref={(el) => (this.textBoxRefs[2] = el)}>
                                     저는 다양한 웹 서비스의 개발하고 운영해온 경험이 있습니다.<br />
                                     다수의 UI 구현을 통해 사용자 인터랙션에 대한 이해도를 갖추고 있으며 업무 효율 향상에 많은 관심을 가지고 있습니다.
                                 </p>
                             </div>
                             <div className="txt-line">
-                                <p className="tit" ref={el => this.elements[2] = el}>UNIQUE<br className="visible_mobile"/> WEB
-                                    <span className="float-1">UNIQUE<br className="visible_mobile" />  WEB</span>
-                                    <span className="float-2">UNIQUE<br className="visible_mobile" />  WEB</span>
-                                    <span className="float-3">UNIQUE<br className="visible_mobile" />  WEB</span>
-                                    <span className="float-4">UNIQUE<br className="visible_mobile" />  WEB</span>
+                                <p className="tit" ref={(el) => (this.textBoxRefs[3] = el)}>
+                                    UNIQUE<br className="visible_mobile"/> WEB
                                 </p>
-                                <p className="desc visible_mobile">
+                                <p className="desc visible_mobile" ref={(el) => (this.textBoxRefs[4] = el)}>
                                     저는 다양한 웹 서비스의 개발하고 운영해온<br />
                                     경험이 있으며 다수의 UI 구현을 통해 사용자 인터랙션에<br />
                                     대한 이해도를 갖추고 있고 업무 효율 향상에<br />
@@ -133,6 +95,5 @@ class Intro extends Component{
         )
     }
 }
-
 
 export default Intro;

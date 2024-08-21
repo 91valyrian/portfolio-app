@@ -73,3 +73,9 @@ input, textarea {
         transition: background-color 0.2s, width .2s, height .2s ; /* 클릭 시 배경색 변화 */
     }
 }
+
+@include mobile{
+    .cursor{
+        display:none;
+    }
+}

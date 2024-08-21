@@ -190,6 +190,7 @@
                     left:0;
                     background: rgba(0,0,0,.6);
                     backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
                     z-index:-1;
                     border-left:0.0521vw solid rgba(255,255,255,0.2);
                     @include virtual_element_block;
@@ -290,6 +291,7 @@
 
                     &::before{
                         backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
                     }
                     
                     ul{
@@ -335,6 +337,7 @@
 
                     &::before{
                         backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
                     }
                     
                     ul{

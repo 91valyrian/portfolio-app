@@ -5,6 +5,7 @@ import Intro from './Content/Intro';
 import About from './Content/About';
 import Project from './Content/Project';
 import Highlight from './Content/Highlight';
+import Footer from './Footer/Footer';
 import Loading from './Loading';
 
 class App extends Component {
@@ -65,12 +66,15 @@ class App extends Component {
                     style={{ transform: `translate3d(${mouseX}px, ${mouseY}px, 0)` }}
                 />
                 <HeaderAdmin />
+                
                 <main>
                     <Intro isLoaded={isLoaded} />
                     <About />
                     <Project />
                     <Highlight />
                 </main>
+
+                <Footer />
             </div>
         );
     }

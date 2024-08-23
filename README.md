@@ -12,3 +12,4 @@
 - marquee를 설치팝니다. `npm install react-fast-marquee --save`
 - gsap를 설치합니다. `npm install gsap`
 - anchor scroll 사용을 위한 react-scroll 설치 `npm install react-scroll`
+- abc
